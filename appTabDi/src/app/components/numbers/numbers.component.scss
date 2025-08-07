@@ -1,0 +1,40 @@
+.container{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+     padding-top: 0.2rem;
+    padding-bottom: 1.5rem;
+}
+
+.contenedor-botones{
+    display: grid;
+    width: 100%;
+    height: 95%;
+    gap: 5px;
+    padding: 5px;
+}
+
+.boton-numero{
+    border: 3px solid rgb(49, 48, 48);
+    border-radius: 10px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e96e5f;
+    cursor: pointer;
+}
+.boton-numero:hover{
+    background-color: #b83e2e;
+}
+img{
+    height: 100px;
+}
+
+.grid-final{
+    grid-column: 1 / 3;
+    // height: 70%;
+    width: 50%;
+}

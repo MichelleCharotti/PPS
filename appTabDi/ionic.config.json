@@ -1,0 +1,7 @@
+{
+  "name": "appTabDi",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

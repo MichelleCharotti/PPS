@@ -1,0 +1,61 @@
+<ion-content>
+  <div class="background-image">
+    <app-animals (enviarDato)="playSonido($event)" *ngIf="animals"></app-animals>
+    <app-numbers (enviarDato)="playSonido($event)" *ngIf="numbers"></app-numbers>
+    <app-colors (enviarDato)="playSonido($event)" *ngIf="colors"></app-colors>
+  </div>
+  <div class="container-buttons">
+
+  
+  <ion-fab  horizontal="end" vertical="top">
+    <ion-fab-button color="dark" title="Cerrar sesión"  style=" width: 40px; height: 40px;" (click)="cerrarSesion()">
+      <ion-icon name="log-out-outline" color="danger"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" class="posicion1" >
+    <ion-fab-button color="dark" style="font-size: 30px; width: 50px; height: 50px;" >      
+      <img src="../../../assets/flags/spain.png" width="90%" height="90%" *ngIf="this.espaniol" />
+      <img src="../../../assets/flags/united-kingdom.png" width="90%" height="90%" *ngIf="this.ingles" />
+      <img src="../../../assets/flags/portugal.png" width="90%" height="90%" *ngIf="this.portugues" />
+    </ion-fab-button>
+
+    <ion-fab-list side="top" >
+     
+      <ion-fab-button color="dark" style="width: 50px; height: 50px;" *ngIf="!this.espaniol" (click)="cambiarIdioma('es')">
+        <img src="../../../assets/flags/spain.png" width="90%" height="90%" />
+      </ion-fab-button>
+      <ion-fab-button color="dark" style="width: 50px; height: 50px;" *ngIf="!this.ingles" (click)="cambiarIdioma('en')">
+        <img src="../../../assets/flags/united-kingdom.png" width="90%" height="90%" />
+      </ion-fab-button>
+      <ion-fab-button color="dark" style="width: 50px; height: 50px;" *ngIf="!this.portugues" (click)="cambiarIdioma('po')">
+        <img src="../../../assets/flags/portugal.png" width="90%" height="90%" />
+      </ion-fab-button>
+     
+    </ion-fab-list>
+  </ion-fab>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" class="posicion">
+    <ion-fab-button color="dark" style="font-size: 30px; width: 50px; height: 50px;">
+      <img src="../../../assets/animals/cat.png" width="80%" height="80%" *ngIf="this.animals" />
+      <img src="../../../assets/colors/paint.png" width="100%" height="100%" *ngIf="this.colors" />
+      <img src="../../../assets/numbers/number.png" width="80%" height="80%" *ngIf="this.numbers" />
+    </ion-fab-button>
+    <ion-fab-list side="top" >
+      <ion-fab-button color="dark" style="width: 50px; height: 50px;" *ngIf="!this.animals" (click)="cambiarTema('a')">
+        <img src="../../../assets/animals/cat.png" width="80%" height="80%" />
+
+      </ion-fab-button >
+      <ion-fab-button color="dark" style="width: 50px; height: 50px;" *ngIf="!this.colors" (click)="cambiarTema('c')">
+        <img src="../../../assets/colors/paint.png" width="100%" height="100%" />
+      </ion-fab-button>
+      <ion-fab-button color="dark" style="width: 50px; height: 50px;" *ngIf="!this.numbers"
+        (click)="cambiarTema('n')">
+        <img src="../../../assets/numbers/number.png" width="80%" height="80%" />
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+</div>
+</ion-content>
+

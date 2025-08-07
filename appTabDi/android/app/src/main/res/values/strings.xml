@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">appTaDi</string>
+    <string name="title_activity_main">appTaDi</string>
+    <string name="package_name">tabla.didactica.idioma</string>
+    <string name="custom_url_scheme">tabla.didactica.idioma</string>
+</resources>

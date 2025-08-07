@@ -1,0 +1,68 @@
+ion-content{
+    --background: #43a9f2;
+    overflow: hidden;
+}
+ion-toolbar{
+    --background:#0163aa;
+    color: #e0e1dd;
+    text-align: center;
+    text-shadow: 4px 3px 0px rgba(0,0,0,0.46);
+   
+    
+}
+ion-title{
+    font-weight: 900;
+    padding-top: 2rem;
+    padding-bottom: 0.5rem;
+}
+
+
+.container-subtitle{
+    margin-bottom: 50px;
+}
+.subtitle{
+    margin-top: 30px;
+    font-weight: 300;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #0d1b2a;
+    padding-top: 1rem;
+    
+}
+.container-input{
+    margin-bottom: 25px;
+}
+ion-item {
+    color: #447f73;
+    --background: #e6b138 !important;
+    --border-color: #447f73;
+}
+.ingreso-rapido{
+    background-color: #e6b138;
+    height: 260px;
+    text-align: center;
+}
+h2{
+    color: #447f73;
+}
+.container-buttons{
+    margin-top: 25px;
+    display: block;
+}
+.fast-login{
+    padding: 10px 0;
+}
+.login{
+    --background: #e96e5f;
+    
+}
+.admin{
+    --background: #447f73;
+}
+.invitado{
+    --background: #914f40;
+}
+
+.alumno{
+    --background: #0271B0;
+}
