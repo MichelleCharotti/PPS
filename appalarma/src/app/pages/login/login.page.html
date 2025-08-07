@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar class="ion-text-center toolbar-color">
+    <ion-title class="app-title">Alarma de robo</ion-title>
+  </ion-toolbar>
+
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-row class="ion-justify-content-center ion-margin-top">
+    <img src="../../../assets/icon/alarma1024.png" class="ion-margin" width="40%" height="40%"/>
+  </ion-row>
+  
+  <ion-row class="ion-justify-content-center ion-padding">
+    <ion-title class="title">Inicie sesión </ion-title>
+  </ion-row>
+
+  <form [formGroup]="loginForm">
+    <ion-grid>
+      <ion-row class="ion-justify-content-center">
+                
+        <ion-col class="ion-text-center ion-align-items-center">
+          
+          <ion-item class="input">
+            <ion-input label="Correo eléctronico" label-placement="floating" placeholder="Correo" type="email" formControlName="mail"></ion-input>
+          </ion-item>
+
+          <ion-text *ngIf="loginForm.controls['mail'].errors?.['required'] && loginForm.controls['mail'].touched" class="error">Debe ingresar un correo</ion-text>
+
+          <ion-item class="ion-margin-top input">
+            <ion-input label="Contraseña" label-placement="floating" placeholder="Contraseña" type="password" formControlName="pass"></ion-input>
+          </ion-item>
+
+          <ion-text *ngIf="loginForm.controls['pass'].errors?.['required'] && loginForm.controls['pass'].touched"  class="error">Debe ingresar una contraseña</ion-text>
+
+          <ion-text *ngIf="loginForm.controls['pass'].errors?.['minlength']"  class="error">Debe tener 6 caracteres mínimo</ion-text>
+
+        </ion-col>
+      </ion-row>
+      
+      <ion-row>
+        <ion-col class="ion-text-center ion-margin-top">
+          <ion-button [disabled]="loginForm.invalid" expand="full" size="large" (click)="login()" class="ingresar">Ingresar</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-title class="fast-login">Acceso Rápido</ion-title>
+      <ion-segment  value="heart">
+       
+
+        <!-- <ion-segment [scrollable]="true" value="heart"> -->
+        <ion-segment-button value="home" (click)="buttonDemoUno()">
+          <ion-icon color="warning" name="person-circle"></ion-icon>
+          <p class="subtitle">Admin</p>
+        </ion-segment-button>
+        <ion-segment-button value="usuario" (click)="buttonDemoDos()">
+          <ion-icon color="warning" name="people"></ion-icon>
+          <p class="subtitle">Usuario</p>
+        </ion-segment-button>
+        <ion-segment-button value="pin" (click)="buttonDemoTres()">
+          <ion-icon color="warning" name="person"></ion-icon>
+          <p class="subtitle">Anonimo</p>
+        </ion-segment-button>
+        <ion-segment-button value="star" (click)="buttonDemoCuatro()" >
+          <ion-icon   color="warning" name="accessibility"></ion-icon>
+          <p class="subtitle">Invitado</p>
+        </ion-segment-button>
+      </ion-segment>
+    </ion-grid>
+  </form>
+</ion-content>

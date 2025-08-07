@@ -1,0 +1,55 @@
+ion-content{
+    --background: #0163aa;
+}
+.toolbar-color{
+    --background: #43a9f2;
+    --color: #ffffff;
+   
+}
+.app-title{
+    font-weight: bold;
+    font-size: 2rem;
+    text-shadow: 0px 1px 4px rgba(0,0,0,0.56);
+    padding-top: 2rem;
+}
+.ion-margin{
+    filter: drop-shadow(10px 5px 5px #000000);
+}
+.ion-justify-content-center{
+    text-align: center;
+}
+
+
+.input{
+    --background: rgb(118, 211, 189);
+}
+.ingresar{
+    font-family: 'Courier New', Courier, monospace;
+    height: 80px;
+    --background: #46A7C4;
+}
+.title, .fast-login,.subtitle{
+    --color: rgb(250, 208, 106);
+    font-weight: bolder;
+    text-shadow: 0px 1px 4px rgba(0,0,0,0.56);
+}
+ion-input{
+    --border: none;
+    --color: #1b263b;
+    font-weight: 800;
+}
+.error{
+    color: rgb(118, 211, 189);
+}
+.fast-login{
+    text-align: center;
+    color: rgb(250, 208, 106);;
+}
+.ion-margin-top{
+    margin-top: 20px;
+}
+.bottom-button{
+    width: 50%;
+    position: absolute;
+    bottom: 19px;
+  }

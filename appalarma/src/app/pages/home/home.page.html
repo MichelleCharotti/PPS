@@ -1,0 +1,29 @@
+
+<ion-content [fullscreen]="true">
+<div class="body">
+  <div class="container" class="ion-text-center toolbar-color">
+
+     @if(!estaBloqueado){
+      <ion-button class="bottom-button" expand="full" size="large" class="logout"  title="Cerrar sesión" (click)="logout()">
+        Cerrar sesión</ion-button>
+
+      <ion-button (click)="cambiarBloqueado()" class="center-container big-round-button login-key container" expand="block">
+        <div class="button-content">
+          <img  alt="boton-activar" src="../../../assets/power-off.png" >
+          <!-- <span class="title-container">Presione para desactivar</span> -->
+        </div>
+      </ion-button>
+    }
+
+    @if(estaBloqueado){
+      <ion-button (click)="formAlert()" class="center-container big-round-button login-key container" expand="block">
+        <div class="button-content">
+          <img  src="../../../assets/power-on.png" alt="boton-activar">
+          <!-- <span class="title-container">Presione para activar</span>     -->
+        </div>
+      </ion-button>
+    }
+  </div>
+</div>
+
+</ion-content>
