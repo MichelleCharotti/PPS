@@ -1,0 +1,51 @@
+<ion-header [translucent]="true">
+  <ion-toolbar  class="ion-text-center posicion">
+    <ion-title slot="start">
+      Carga de Crédito
+    </ion-title>
+    <ion-tab-button slot="end" (click)="logout()">
+      <ion-icon name="log-out-outline"></ion-icon>
+      <ion-label>Salir</ion-label>
+    </ion-tab-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div class="spinner" *ngIf="cargando">
+    <ion-spinner name="lines-sharp" color="danger" style="width: 65px;height: 65px;"></ion-spinner>
+  </div>
+
+  <div class="container" *ngIf="usuario">
+    
+    <div class="titulo-principal" color="warning" shape="round">
+      <h2 class="perfil">Bienvenido  {{ usuario.perfil }}</h2>    
+    </div>
+
+    <div class="contenedor-botones">      
+      <ion-title class="creditos-container">Total de créditos</ion-title>
+      <div class="boton-numero">
+          <ion-title class="numeros-creditos">{{usuario.credito}}</ion-title>
+      </div>
+      <!-- <div class="creditos-container">
+        <p>Creditos de 10: {{usuario.credito10}}</p>
+        <p>Creditos de 50: {{usuario.credito50}}</p>
+        <p>Creditos de 100: {{usuario.credito100}}</p>
+      </div> -->
+      
+    </div>
+    <ion-button [disabled]="usuario.credito === 0" style="height: 50px;" class="ion-margin-top" color="danger" shape="round" (click)="vaciarCredito()">
+      Borrar créditos
+      <ion-icon class="ion-margin-start" name="trash"></ion-icon>        
+    </ion-button>
+  </div>
+  <zxing-scanner *ngIf="scannerEnabled" #scanner (scanSuccess)="scanSuccessHandler($event)">
+  </zxing-scanner>
+      
+  <ion-fab horizontal="center" vertical="bottom" class="boton-logout">
+    <ion-fab-button [disabled]="noCarga" color="warning" title="Cerrar sesión" >      
+      <ion-icon  name="qr-code-outline" color="dark"(click)="enableScanner()" *ngIf="!scannerEnabled"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "appcargac",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

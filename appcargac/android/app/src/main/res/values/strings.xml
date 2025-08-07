@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">appCarCre</string>
+    <string name="title_activity_main">appCarCre</string>
+    <string name="package_name">carga.de.credito</string>
+    <string name="custom_url_scheme">carga.de.credito</string>
+</resources>
