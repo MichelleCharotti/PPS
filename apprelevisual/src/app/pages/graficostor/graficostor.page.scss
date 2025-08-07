@@ -1,0 +1,58 @@
+ion-content {
+  --background: #43a9f2;
+  
+}
+ion-toolbar{
+  --background: rgba(255, 255, 255, 0);
+  
+}
+ion-tab-button{
+  --background: rgba(105, 49, 68, 0);
+  --color: #5ab8a2;
+}
+
+
+.contenedor-principal{
+    padding: 14px;
+    // padding-bottom: 50px;
+    
+    
+}
+
+.contenedorChart{
+    // color: white;
+    background-color: rgb(123, 0, 62);
+    padding-top: 2rem; 
+    padding-bottom: 5rem;   
+    
+}
+
+
+  .fabNeon{
+    --background: #0163aa;
+    --color: #ffffff;
+  }
+
+  ion-icon {
+    font-size: 50px;
+
+    .heart {
+      color: red !important;
+    }
+
+    .skull {
+      --color: black !important;
+    }
+  }
+
+  ion-card-header{
+    font-size: 1.5rem ;
+    color:#001627;
+     padding-bottom: 3rem;   
+  }
+
+  
+//   ion-card-content{
+//     font-size: 1.5rem ;
+//   }
+  

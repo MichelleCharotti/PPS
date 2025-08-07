@@ -1,0 +1,66 @@
+<ion-content #home>
+
+  @if(!selectedCosas)
+  {
+    <div class="button-container">
+      <ion-card class="sala-card" (click)="goToCosas('lindas')">
+        <ion-card-content>
+          <!-- <ion-icon class="heart" name="heart-sharp"></ion-icon> -->
+          <img class="imagen" src="../../assets/icon/gustar.png" alt="">
+          <p>Cosas lindas</p>
+        </ion-card-content>
+      </ion-card>
+      <ion-card class="sala-card sala-cardDos" (click)="goToCosas('feas')">
+        <ion-card-content>
+          <!-- <ion-icon class="skull" name="skull-sharp"></ion-icon> -->
+          <img class="imagen" src="../../assets/icon/noGustar.png" alt="">
+          <p>Cosas feas</p>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  }
+
+  @if (selectedCosas)
+  {   
+    <app-cosas [cosas]="selectedCosas"></app-cosas>
+    <ion-fab vertical="top" horizontal="start" slot="fixed">
+      <ion-fab-button  class="fabNeon" (click)="goHome()">
+        <ion-icon name="arrow-back-sharp"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+    
+
+      <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button class="fabNeon">
+          <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+
+        <ion-fab-list side="top">
+          <ion-fab-button class="fabNeon" (click)="takePhoto()">
+            <ion-icon name="camera"></ion-icon>
+          </ion-fab-button>
+          <ion-fab-button class="fabNeon" (click)="selectFromGallery()">
+            <ion-icon name="image"></ion-icon>
+          </ion-fab-button>
+        </ion-fab-list>
+      </ion-fab>
+
+
+      <ion-fab  side="top" horizontal="end" slot="fixed" class="grafico">
+      <ion-fab-button  class="fabNeon" (click)="grafico(selectedCosas)">
+        <ion-icon name="bar-chart-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+    
+  }
+
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button class="fabNeon" (click)="logout()">
+      <ion-icon name="power-sharp"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+    
+
+</ion-content>

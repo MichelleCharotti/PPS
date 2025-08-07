@@ -1,0 +1,7 @@
+{
+  "name": "apprelevisual",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

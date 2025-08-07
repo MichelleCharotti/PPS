@@ -1,0 +1,38 @@
+<!-- <ion-header [translucent]="true"> -->
+  <!-- <ion-toolbar> -->
+   <ion-fab vertical="top" horizontal="start" slot="fixed">
+      <ion-fab-button  class="fabNeon" (click)="goHome()">
+        <ion-icon name="arrow-back-sharp"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+<ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button class="fabNeon" (click)="logout()">
+      <ion-icon name="power-sharp"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <!-- </ion-toolbar> -->
+<!-- </ion-header> -->
+
+
+    
+
+<ion-content >
+
+
+  <div class="contenedor-principal">
+    
+   
+    <ion-card class="contenedorChart" >
+      <ion-card-header>
+        Cosas Feas
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #barCanvas style="position: relative; height:40vh; width:80vw"></canvas>
+      </ion-card-content>
+    </ion-card>
+    
+    
+  </div>
+
+</ion-content>
