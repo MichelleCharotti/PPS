@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar class="titulo-login">
+    <ion-title class="title">Bienvenido al juego </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="background-image">
+    <img src="../../../assets/icon/memoria1024.png">
+    <div style="margin: 6px;padding-top: 6px;">
+      <form [formGroup] = "formRegistro">
+        <ion-item class="ion-margin-top padding">
+          <ion-input type="email" placeholder="Correo" formControlName="email"></ion-input>
+          <ion-text *ngIf="formRegistro.controls['email'].errors?.['required'] && formRegistro.controls['email'].touched" color="warning">Debe ingresar un correo</ion-text>
+        </ion-item>
+        
+    
+        <ion-item>
+          <ion-input type="password" placeholder="Contraseña" formControlName="pass"></ion-input>
+          <ion-text *ngIf="formRegistro.controls['pass'].errors?.['required'] && formRegistro.controls['pass'].touched" color="warning">Debe ingresar una contraseña</ion-text>
+          <ion-text *ngIf="formRegistro.controls['pass'].errors?.['minlength']" color="warning">Debe tener 6 caracteres mínimo</ion-text>
+        </ion-item>
+        
+  
+        <div class="ion-text-center ion-margin-top">
+          <ion-button class="login-button" [disabled]="formRegistro.invalid" expand="block" (click)="login()">Ingresar</ion-button>
+        </div>
+      </form>
+    </div>
+
+    <div class="container-buttons">
+      <div class="ion-text-center ion-margin-top">
+        <ion-radio-group value="custom-checked">
+          <p></p>
+          <ion-radio value="invitado" aria-label="Custom checkbox" (click)="logueoRapido('invitado@invitado.com','222222')"><h2>Entrar como invitado</h2></ion-radio>
+          <ion-radio value="admin" aria-label="Custom checkbox"  (click)="logueoRapido('admin@admin.com','111111')"><h2>Entrar como administrador</h2></ion-radio>
+          <ion-radio value="usuario" aria-label="Custom checkbox" (click)="logueoRapido('usuario@usuario.com','333333')"><h2>Entrar como usuario</h2></ion-radio>
+          <ion-radio value="alumno" aria-label="Custom checkbox" (click)="logueoRapido('anonimo@anonimo.com','444444')"><h2>Entrar como anonimo</h2></ion-radio>
+        </ion-radio-group>
+      </div>
+    </div>
+  </div>
+
+</ion-content>

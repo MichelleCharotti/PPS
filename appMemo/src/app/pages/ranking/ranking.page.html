@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="posicion">
+    
+    <ion-buttons slot="start">
+      <ion-button fill="clear" shape="round" routerLink="/home">
+        Volver a jugar
+      </ion-button>
+    </ion-buttons>
+    
+    <ion-buttons slot="end">
+      <ion-button fill="clear" shape="round" (click)="logout()">
+        Cerrar sesión
+        <ion-icon name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <div class="botonera">
+    <ion-button class="filter" (click)="tipoResultado(1)">Fácil</ion-button>
+    <ion-button class="filter" (click)="tipoResultado(2)">Medio</ion-button>
+    <ion-button class="filter" (click)="tipoResultado(3)">Dificil</ion-button>
+  </div>
+
+  <!-- <div class="spinner" *ngIf="cargando">
+    <ion-spinner name="lines-sharp-small" color="warning" style="width: 70px;height: 70px;"></ion-spinner>
+  </div> -->
+
+  <div *ngIf="top5 && !cargando">
+    <ion-title class="titulo-principal" *ngIf="nivel == 'Principiante'">Mejores 5 del nivel Fácil</ion-title>
+    <ion-title class="titulo-principal" *ngIf="nivel == 'Avanzado'">Mejores 5 del nivel Medio</ion-title>
+    <ion-title class="titulo-principal" *ngIf="nivel == 'Experto'">Mejores 5 del nivel Dificl</ion-title>
+
+    <ion-card *ngFor="let item of top5" class="card ion-text-center card-container" >
+      <ion-card-header class="tamanio">
+        <ion-card-title style="font-size: x-large;">{{ item.jugador }}</ion-card-title>
+        <ion-card-subtitle class="subtitle">{{ item.nivel }}</ion-card-subtitle>
+        <ion-card-subtitle class="subtitle">Fecha: {{ item.fecha}} | Tiempo: {{ item.tiempo }}</ion-card-subtitle>
+      </ion-card-header>      
+    </ion-card>
+
+  </div>
+
+  
+
+</ion-content>
